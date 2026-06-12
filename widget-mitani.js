@@ -185,6 +185,14 @@
             transition: filter 0.2s;
         }
         .q-btn-trigger-ia:hover { filter: drop-shadow(0 6px 18px rgba(0,0,0,0.32)); background: transparent !important; }
+        /* especificidade de ID: vence qualquer regra de button do tema WooCommerce */
+        button#q-open-ia, button#q-open-ia:hover, button#q-open-ia:focus, button#q-open-ia:active {
+            background: transparent !important; background-color: transparent !important; background-image: none !important;
+            border: 0 !important; box-shadow: none !important; outline: none !important;
+            -webkit-box-shadow: none !important; text-shadow: none !important;
+            -webkit-appearance: none !important; appearance: none !important;
+        }
+        button#q-open-ia::before, button#q-open-ia::after { display: none !important; content: none !important; background: transparent !important; }
         .q-btn-trigger-ia img { width: 100%; height: 100%; object-fit: contain; background: transparent; }
         @media (min-width: 768px) { .q-btn-trigger-ia { width: 70px; height: 70px; } }
 
