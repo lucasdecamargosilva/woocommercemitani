@@ -178,7 +178,7 @@
             background: transparent !important; background-color: transparent !important;
             border: none !important; box-shadow: none !important; padding: 0 !important;
             cursor: pointer; -webkit-appearance: none; appearance: none;
-            width: 104px; height: 54px;
+            width: 70px; height: 70px;
             display: flex; align-items: center; justify-content: center;
             filter: drop-shadow(0 3px 10px rgba(0,0,0,0.22));
             animation: q-shake 3s infinite;
@@ -186,7 +186,7 @@
         }
         .q-btn-trigger-ia:hover { filter: drop-shadow(0 6px 18px rgba(0,0,0,0.32)); background: transparent !important; }
         .q-btn-trigger-ia img { width: 100%; height: 100%; object-fit: contain; background: transparent; }
-        @media (min-width: 768px) { .q-btn-trigger-ia { width: 120px; height: 60px; } }
+        @media (min-width: 768px) { .q-btn-trigger-ia { width: 70px; height: 70px; } }
 
         /* ── Inline button ── */
         .q-btn-inline-provador {
@@ -626,7 +626,7 @@
 
 
     // ─── IMAGEM DO BOTÃO (trigger) ─────────────────────────────────────────────
-    const stampImageHTML = `<img src="https://loja.mitani.com.br/wp-content/uploads/2025/11/LOGO-MITANI-1024x362.webp" alt="Provador Virtual Mitani" style="width:100%;height:100%;object-fit:contain;">`;
+    const stampImageHTML = `<img src="https://cdn.shopify.com/s/files/1/0636/6334/1746/files/logo_provador.png?v=1772494793" alt="Provador Virtual" style="width:100%;height:100%;object-fit:contain;">`;
 
 
 
@@ -642,7 +642,7 @@
                     <!-- Persistent header (all steps) -->
                     <div id="q-header-provador">
                         <h1>Provador Virtual</h1>
-                        <img src="https://acdn-us.mitiendanube.com/stores/005/666/965/themes/common/logo-1736834517-1757684109-613bda3c075ef676d7e60f15274a14b31757684109-480-0.webp" alt="FORTUNA SUNGLASSES" style="height:64px;width:auto;"/>
+                        <img src="https://loja.mitani.com.br/wp-content/uploads/2025/11/LOGO-MITANI-1024x362.webp" alt="MITANI" style="height:64px;width:auto;"/>
                     </div>
 
                     <!-- Main step -->
