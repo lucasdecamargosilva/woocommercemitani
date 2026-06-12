@@ -159,11 +159,13 @@
 
         :root {
             --c-bg: #ffffff;
-            --c-surface: #fbf4f2;
-            --c-ink: #2a1a18;
-            --c-muted: #999;
-            --c-line: #ead7d3;
-            --c-accent: #b25a55;
+            --c-surface: #eef5fb;
+            --c-ink: #143049;
+            --c-muted: #7b93a6;
+            --c-line: #d3e2ef;
+            --c-accent: #1c6fa8;
+            --c-accent-2: #2e9bd6;
+            --c-grad: linear-gradient(135deg, #1b4a6b 0%, #2e93cf 100%);
             --c-danger: #cc3333;
             --font-display: 'Bebas Neue', sans-serif;
             --font-body: 'DM Sans', sans-serif;
@@ -173,28 +175,33 @@
         @keyframes q-shake { 0%,50%,100%{transform:rotate(0deg)} 10%,30%{transform:rotate(-10deg)} 20%,40%{transform:rotate(10deg)} }
         .q-btn-trigger-ia {
             position: absolute; top: 40px; right: 14px; z-index: 100;
-            background: none; border: none; padding: 0; cursor: pointer;
-            width: 70px; height: 70px;
+            background: transparent !important; background-color: transparent !important;
+            border: none !important; box-shadow: none !important; padding: 0 !important;
+            cursor: pointer; -webkit-appearance: none; appearance: none;
+            width: 104px; height: 54px;
             display: flex; align-items: center; justify-content: center;
             filter: drop-shadow(0 3px 10px rgba(0,0,0,0.22));
             animation: q-shake 3s infinite;
             transition: filter 0.2s;
         }
-        .q-btn-trigger-ia:hover { filter: drop-shadow(0 6px 18px rgba(0,0,0,0.32)); }
-        .q-btn-trigger-ia img { width: 100%; height: 100%; object-fit: contain; }
-        @media (min-width: 768px) { .q-btn-trigger-ia { width: 70px; height: 70px; } }
+        .q-btn-trigger-ia:hover { filter: drop-shadow(0 6px 18px rgba(0,0,0,0.32)); background: transparent !important; }
+        .q-btn-trigger-ia img { width: 100%; height: 100%; object-fit: contain; background: transparent; }
+        @media (min-width: 768px) { .q-btn-trigger-ia { width: 120px; height: 60px; } }
 
         /* ── Inline button ── */
         .q-btn-inline-provador {
-            display: flex; align-items: center; justify-content: center; gap: 7px;
-            width: 100%; padding: 13px 16px;
-            background: transparent; color: var(--c-accent);
-            border: 1.5px solid var(--c-accent); border-radius: 0;
-            font-family: 'Work Sans', var(--font-body), sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
-            cursor: pointer; transition: background 0.25s, color 0.25s;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            width: 100%; padding: 15px 16px;
+            background: var(--c-grad) !important; color: #fff !important;
+            border: none !important; border-radius: 999px !important;
+            -webkit-appearance: none; appearance: none;
+            font-family: 'Work Sans', var(--font-body), sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+            cursor: pointer; transition: filter 0.25s, transform 0.1s;
+            box-shadow: 0 4px 14px rgba(27,74,107,0.28);
             margin-bottom: 10px; box-sizing: border-box;
         }
-        .q-btn-inline-provador:hover { background: var(--c-accent); color: #fff; }
+        .q-btn-inline-provador:hover { filter: brightness(1.08); color: #fff !important; }
+        .q-btn-inline-provador:active { transform: translateY(1px); }
         .q-btn-inline-provador svg { width: 14px; height: 14px; flex-shrink: 0; }
 
         /* ── Modal overlay ── */
@@ -422,23 +429,24 @@
         /* ── CTA buttons ── */
         .q-btn-black {
             width: 100%; height: 52px;
-            background: var(--c-accent); color: #fff;
-            border: none; border-radius: 0;
+            background: var(--c-grad); color: #fff;
+            border: none; border-radius: 999px;
             font-family: var(--font-display); font-size: 17px;
             letter-spacing: 3px; text-transform: uppercase;
-            cursor: pointer; transition: opacity 0.2s; box-sizing: border-box;
+            cursor: pointer; transition: filter 0.2s; box-sizing: border-box;
+            box-shadow: 0 4px 14px rgba(27,74,107,0.28);
         }
-        .q-btn-black:hover:not(:disabled) { opacity: 0.82; }
-        .q-btn-black:disabled { background: #ccc; cursor: not-allowed; }
+        .q-btn-black:hover:not(:disabled) { filter: brightness(1.08); }
+        .q-btn-black:disabled { background: #ccc; cursor: not-allowed; box-shadow: none; }
         .q-btn-outline {
             width: 100%; height: 52px;
-            background: transparent; color: var(--c-ink);
-            border: 1.5px solid var(--c-line); border-radius: 0;
+            background: transparent; color: var(--c-accent);
+            border: 1.5px solid var(--c-accent); border-radius: 999px;
             font-family: var(--font-display); font-size: 17px;
             letter-spacing: 3px; text-transform: uppercase;
             cursor: pointer; transition: border-color 0.2s, background 0.2s; box-sizing: border-box;
         }
-        .q-btn-outline:hover { border-color: var(--c-ink); background: var(--c-surface); }
+        .q-btn-outline:hover { border-color: var(--c-accent); background: var(--c-surface); }
 
         /* ── PIX screen ── */
         #q-step-pix {
@@ -618,7 +626,7 @@
 
 
     // ─── IMAGEM DO BOTÃO (trigger) ─────────────────────────────────────────────
-    const stampImageHTML = `<img src="https://cdn.shopify.com/s/files/1/0636/6334/1746/files/logo_provador.png?v=1772494793" alt="Provador Virtual" style="width:100%;height:100%;object-fit:contain;">`;
+    const stampImageHTML = `<img src="https://loja.mitani.com.br/wp-content/uploads/2025/11/LOGO-MITANI-1024x362.webp" alt="Provador Virtual Mitani" style="width:100%;height:100%;object-fit:contain;">`;
 
 
 
