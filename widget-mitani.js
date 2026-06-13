@@ -173,6 +173,7 @@
 
         /* ── Trigger (selo sobre foto) ── */
         @keyframes q-shake { 0%,50%,100%{transform:rotate(0deg)} 10%,30%{transform:rotate(-10deg)} 20%,40%{transform:rotate(10deg)} }
+        @keyframes q-shake-soft { 0%,88%,100%{transform:rotate(0deg)} 92%{transform:rotate(-3deg)} 96%{transform:rotate(3deg)} }
         .q-btn-trigger-ia {
             position: absolute; top: 14px; right: 14px; z-index: 100;
             display: inline-flex; align-items: center; gap: 6px;
@@ -180,7 +181,7 @@
             cursor: pointer; -webkit-appearance: none; appearance: none;
             font-family: 'Work Sans', var(--font-body), sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
             box-shadow: 0 4px 14px rgba(27,74,107,0.35);
-            animation: q-shake 3s infinite;
+            animation: q-shake-soft 5s ease-in-out infinite;
             transition: filter 0.2s, transform 0.1s;
         }
         .q-btn-trigger-ia:hover { filter: brightness(1.08); }
