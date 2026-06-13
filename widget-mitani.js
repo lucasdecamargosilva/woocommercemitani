@@ -174,32 +174,32 @@
         /* ── Trigger (selo sobre foto) ── */
         @keyframes q-shake { 0%,50%,100%{transform:rotate(0deg)} 10%,30%{transform:rotate(-10deg)} 20%,40%{transform:rotate(10deg)} }
         .q-btn-trigger-ia {
-            position: absolute; top: 40px; right: 14px; z-index: 100;
-            background: transparent !important; background-color: transparent !important;
-            border: none !important; box-shadow: none !important; padding: 0 !important;
+            position: absolute; top: 14px; right: 14px; z-index: 100;
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 14px; width: auto; height: auto;
             cursor: pointer; -webkit-appearance: none; appearance: none;
-            width: 70px; height: 70px;
-            display: flex; align-items: center; justify-content: center;
-            filter: drop-shadow(0 3px 10px rgba(0,0,0,0.22));
+            font-family: 'Work Sans', var(--font-body), sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+            box-shadow: 0 4px 14px rgba(27,74,107,0.35);
             animation: q-shake 3s infinite;
-            transition: filter 0.2s;
+            transition: filter 0.2s, transform 0.1s;
         }
-        .q-btn-trigger-ia:hover { filter: drop-shadow(0 6px 18px rgba(0,0,0,0.32)); background: transparent !important; }
-        /* especificidade de ID: vence qualquer regra de button do tema WooCommerce */
+        .q-btn-trigger-ia:hover { filter: brightness(1.08); }
+        .q-btn-trigger-ia:active { transform: translateY(1px); }
+        .q-btn-trigger-ia svg { width: 16px; height: 16px; flex-shrink: 0; }
+        /* especificidade de ID: garante o estilo azul mesmo com o button{} do tema */
         button#q-open-ia, button#q-open-ia:hover, button#q-open-ia:focus, button#q-open-ia:active {
-            background: transparent !important; background-color: transparent !important; background-image: none !important;
-            border: 0 !important; box-shadow: none !important; outline: none !important;
-            -webkit-box-shadow: none !important; text-shadow: none !important;
+            background: var(--c-grad) !important; background-color: #1c6fa8 !important;
+            color: #fff !important; border: 0 !important; border-radius: 999px !important;
+            outline: none !important; text-shadow: none !important;
             -webkit-appearance: none !important; appearance: none !important;
         }
-        button#q-open-ia::before, button#q-open-ia::after { display: none !important; content: none !important; background: transparent !important; }
-        .q-btn-trigger-ia img { width: 100%; height: 100%; object-fit: contain; background: transparent; }
-        @media (min-width: 768px) { .q-btn-trigger-ia { width: 70px; height: 70px; } }
+        button#q-open-ia::before, button#q-open-ia::after { display: none !important; content: none !important; }
+        @media (min-width: 768px) { .q-btn-trigger-ia { font-size: 12px; padding: 9px 16px; } .q-btn-trigger-ia svg { width: 18px; height: 18px; } }
 
         /* ── Inline button ── */
         .q-btn-inline-provador {
             display: flex; align-items: center; justify-content: center; gap: 8px;
-            width: 100%; padding: 15px 16px;
+            width: 100%; padding: 9px 16px;
             background: var(--c-grad) !important; color: #fff !important;
             border: none !important; border-radius: 999px !important;
             -webkit-appearance: none; appearance: none;
@@ -634,7 +634,7 @@
 
 
     // ─── IMAGEM DO BOTÃO (trigger) ─────────────────────────────────────────────
-    const stampImageHTML = `<img src="https://cdn.shopify.com/s/files/1/0636/6334/1746/files/logo_provador.png?v=1772494793" alt="Provador Virtual" style="width:100%;height:100%;object-fit:contain;">`;
+    const stampImageHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6.5" cy="14" r="3.5"/><circle cx="17.5" cy="14" r="3.5"/><path d="M10 14h4M2.5 11l1.5-3.5a2 2 0 0 1 1.8-1.2M21.5 11l-1.5-3.5a2 2 0 0 0-1.8-1.2"/></svg><span>Provar Óculos</span>`;
 
 
 
