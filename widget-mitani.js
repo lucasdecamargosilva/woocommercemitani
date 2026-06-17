@@ -780,6 +780,17 @@
         if (/REL[ÓO]GIO|RELOGIO|\bWATCH\b/.test(productNameNormalized)) {
             return;
         }
+        // Não exibir em lentes de contato — lê a categoria da página (acima do título / meta / breadcrumb)
+        var _catText = '';
+        var _catSels = ['.product-cat', '.posted_in', '.woocommerce-breadcrumb', '.breadcrumbs', '.product_meta'];
+        for (var _i = 0; _i < _catSels.length; _i++) {
+            var _el = document.querySelector(_catSels[_i]);
+            if (_el && _el.innerText) { _catText += ' ' + _el.innerText; }
+        }
+        _catText = _catText.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+        if (/LENTES?\s+DE\s+CONTATO/.test(_catText)) {
+            return;
+        }
 
         // Fontes (async, não bloqueia render)
         const fontLink = document.createElement('link');
