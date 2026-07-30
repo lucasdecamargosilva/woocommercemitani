@@ -159,7 +159,6 @@
 /* PL: borda arredondada do modal */@media(min-width:768px){.q-card-ia,.q-card,#q-card-ia,#q-card,.q-modal-card{border-radius:16px !important;overflow:hidden;}}
 
         /* ── Fontes ── */
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
 
         :root {
             --c-bg: #ffffff;
@@ -171,8 +170,8 @@
             --c-accent-2: #2e9bd6;
             --c-grad: linear-gradient(135deg, #1b4a6b 0%, #2e93cf 100%);
             --c-danger: #cc3333;
-            --font-display: 'Bebas Neue', sans-serif;
-            --font-body: 'DM Sans', sans-serif;
+            --font-display: inherit;
+            --font-body: inherit;
         }
 
         /* ── Trigger (selo sobre foto) ── */
@@ -183,7 +182,7 @@
             display: inline-flex; align-items: center; gap: 6px;
             padding: 8px 14px; width: auto; height: auto;
             cursor: pointer; -webkit-appearance: none; appearance: none;
-            font-family: 'Work Sans', var(--font-body), sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+            font-family: inherit; font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
             box-shadow: 0 4px 14px rgba(27,74,107,0.35);
             animation: q-shake-soft 5s ease-in-out infinite;
             transition: filter 0.2s, transform 0.1s;
@@ -208,7 +207,7 @@
             background: var(--c-grad) !important; color: #fff !important;
             border: none !important; border-radius: 999px !important;
             -webkit-appearance: none; appearance: none;
-            font-family: 'Work Sans', var(--font-body), sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+            font-family: inherit; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
             cursor: pointer; transition: filter 0.25s, transform 0.1s;
             box-shadow: 0 4px 14px rgba(27,74,107,0.28);
             margin-bottom: 10px; box-sizing: border-box;
@@ -800,10 +799,6 @@
         }
 
         // Fontes (async, não bloqueia render)
-        const fontLink = document.createElement('link');
-        fontLink.href = 'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap';
-        fontLink.rel = 'stylesheet';
-        document.head.appendChild(fontLink);
 
         // Phosphor Icons — carregado lazily na primeira abertura do modal
         // (não carrega na init para não impactar o tempo de carregamento da página)
