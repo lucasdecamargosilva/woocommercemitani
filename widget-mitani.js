@@ -1727,6 +1727,11 @@ const fd = new FormData();
                     const contentType = res.headers.get("content-type") || "";
                     if (contentType.includes("application/json")) {
                         const data = await res.json();
+                        if (data.plan_limit === true) {
+                            try { document.getElementById('q-loading-box').style.display = 'none'; } catch (_) {}
+                            try { closeModal(); } catch (_) {} [openBtn, inlineBtn, genBtn, modal].forEach(function (el) { try { el.style.display = 'none'; } catch (_) {} });
+                            return;
+                        }
                         if (data.limited || data.error === 'limite_diario') {
                             try { document.getElementById('q-loading-box').style.display = 'none'; } catch (_) {}
                             createPixAndPoll();
@@ -1803,6 +1808,11 @@ const fd = new FormData();
                     body: JSON.stringify({ phone })
                 });
                 const data = await resp.json();
+                if (data.plan_limit === true) {
+                    genBtn.disabled = false;
+                    try { closeModal(); } catch (_) {} [openBtn, inlineBtn, genBtn, modal].forEach(function (el) { try { el.style.display = 'none'; } catch (_) {} });
+                    return;
+                }
                 if (data.limited) {
                     genBtn.disabled = false;
                     createPixAndPoll();
