@@ -200,6 +200,8 @@
             -webkit-appearance: none !important; appearance: none !important;
         }
         button#q-open-ia::before, button#q-open-ia::after { display: none !important; content: none !important; }
+        /* Tema da Mitani (CSS mitani-v2) força o selo para baixo; seletor mais forte devolve o selo ao canto superior direito (21/10/2026) */
+        html body #q-open-ia.q-btn-trigger-ia { top: 14px !important; bottom: auto !important; right: 14px !important; left: auto !important; }
         @media (min-width: 768px) { .q-btn-trigger-ia { font-size: 12px; padding: 9px 16px; } .q-btn-trigger-ia svg { width: 18px; height: 18px; } }
 
         /* ── Inline button ── */
